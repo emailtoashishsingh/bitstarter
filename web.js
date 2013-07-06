@@ -8,7 +8,7 @@ var app = express.createServer(express.logger());
 //console.log ("The contents of the buffer are", data.toString('utf-8'));
 
 app.get('/', function(request, response) {
-  response.render(index.html);
+  response.render('index.html');
 });
 
 var port = process.env.PORT || 5000;

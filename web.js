@@ -3,6 +3,7 @@ var express = require('express');
 //var data = new Buffer(40);
 
 var index = fs.readFileSync('index.html');
+console.log ("The path is", __dirname);
 
 var app = express.createServer(express.logger());
 //data = fs.readFileSync('index.html');
@@ -12,7 +13,7 @@ var app = express.createServer(express.logger());
 console.log ("The file contents are", index.toString);
 
 app.get('/', function(request, response) {
-    response.writeHead(200, {'Content Type':'text/plain'});
+    response.writeHead(200, {'Content Type':'text/html'});
     response.end(index);
 //response.render('index.html');
 });

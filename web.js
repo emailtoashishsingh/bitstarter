@@ -14,8 +14,9 @@ console.log ("The file contents are", index.toString);
 
 app.get('/', function(request, response) {
     response.writeHead(200, {'Content Type':'text/html'});
-//    response.end(index);
-response.render('index.html');
+    response.write(index)
+    response.end();
+//response.render('index.html');
 });
 
 var port = process.env.PORT || 5000;

@@ -1,6 +1,8 @@
-var fs = require ('fs');
+llvar fs = require ('fs');
 var express = require('express');
-var data = new Buffer(40);
+//var data = new Buffer(40);
+
+var index = fs.readFileSync('index.html');
 
 var app = express.createServer(express.logger());
 //data = fs.readFileSync('index.html');
@@ -8,7 +10,9 @@ var app = express.createServer(express.logger());
 //console.log ("The contents of the buffer are", data.toString('utf-8'));
 
 app.get('/', function(request, response) {
-  response.render('index.html');
+    resonse.writeHead(200, {'Content Type':'text/plain'});
+    response.end(index);
+//response.render('index.html');
 });
 
 var port = process.env.PORT || 5000;

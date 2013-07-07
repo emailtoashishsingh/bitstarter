@@ -12,7 +12,7 @@ var app = express.createServer(express.logger());
 console.log ("The file contents are", index.toString);
 
 app.get('/', function(request, response) {
-    resonse.writeHead(200, {'Content Type':'text/plain'});
+    response.writeHead(200, {'Content Type':'text/plain'});
     response.end(index);
 //response.render('index.html');
 });

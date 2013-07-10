@@ -2,7 +2,7 @@ var fs = require ('fs');
 var express = require('express');
 //var data = new Buffer(40);
 
-var index = fs.readFileSync('index.html', 'utf8');
+var index = new Buffer(fs.readFileSync('index.html', 'utf8'));
 console.log ("The path is", __dirname);
 
 var app = express.createServer(express.logger());
@@ -13,11 +13,11 @@ var app = express.createServer(express.logger());
 console.log ("The file contents are", index.toString);
 
 app.get('/', function(request, response) {
-    response.writeHead(200, {'Content Type':'text/html'});
+//    response.writeHead(200, {'Content Type':'text/html'});
     console.log (response.write(index));exit
 
-    response.send(index.tostring);
-    response.end();
+    response.send(index.toString);
+    //response.end();
 //response.render('index.html');
 });
 

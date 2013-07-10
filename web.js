@@ -14,7 +14,7 @@ console.log ("The file contents are", index.toString);
 
 app.get('/', function(request, response) {
 //    response.writeHead(200, {'Content Type':'text/html'});
-    console.log (response.write(index));exit
+//    console.log (response.write(index));exit
 
     response.send(index.toString);
     //response.end();

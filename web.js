@@ -16,7 +16,7 @@ app.get('/', function(request, response) {
 //    response.writeHead(200, {'Content Type':'text/html'});
 //    console.log (response.write(index));exit
 
-    response.send(index.toString("utf"));
+    response.send(index.toString("utf-8"));
     //response.end();
 //response.render('index.html');
 });

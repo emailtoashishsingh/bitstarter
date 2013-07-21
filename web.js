@@ -6,6 +6,7 @@ var index = new Buffer(fs.readFileSync('index.html', 'utf8'));
 console.log ("The path is", __dirname);
 
 var app = express.createServer(express.logger());
+console.log("Server created");
 //data = fs.readFileSync('index.html');
 //console.log ("Length of data is", data.length);
 //console.log ("The contents of the buffer are", data.toString('utf-8'));
